@@ -1,0 +1,18 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+# 忽略引入库的所有警告（强迫症者的福音啊）
+inhibit_all_warnings!
+
+install! 'cocoapods',
+generate_multiple_pod_projects: true
+
+use_frameworks! :linkage => :static
+
+target 'BBUDIDKit_Example' do
+  pod 'BBUDIDKit', :path => '../'
+
+  target 'BBUDIDKit_Tests' do
+    inherit! :search_paths
+  end
+end
